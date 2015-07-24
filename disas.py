@@ -80,7 +80,7 @@ def prompt():
 				if s == -1:
 					print("can't parse number")
 				else :
-					res = finds(s)
+					res = find(s)
 					for l in res:
 						print(hex(l) + ' = ' + str(l))
 			else:
