@@ -159,7 +159,7 @@ def xref(where=0):
 
 	for x in xrefs:
 		disas(x, 3)
-		print()
+		print("-------------------")
 
 	return xrefs
 

@@ -48,7 +48,7 @@ def prompt():
 			if len(action) >= 2:
 				addr = int_(action[1])
 				cnt = 30
-				if len(action) == 3 and action[2] > 0:
+				if len(action) == 3 and int(action[2]) > 0:
 					cnt = int_(action[2])
 				if addr == -1 or cnt == -1:
 					print("can't parse numbers")
@@ -61,7 +61,7 @@ def prompt():
 				unit = int_(action[1])
 				addr = int_(action[2])
 				cnt = 32
-				if len(action) == 4 and action[3] > 0:
+				if len(action) == 4 and int(action[3]) > 0:
 					cnt = int_(action[3])
 				if unit == -1 or addr == -1 or cnt == -1:
 					print("can't parse numbers")
@@ -73,7 +73,7 @@ def prompt():
 			if len(action) >= 2:
 				addr = int_(action[1])
 				cnt = 1
-				if len(action) == 3 and action[2] > 0:
+				if len(action) == 3 and int(action[2]) > 0:
 					cnt = int_(action[2])
 				if addr == -1 or cnt == -1:
 					print("can't parse numbers")
