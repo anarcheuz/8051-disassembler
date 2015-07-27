@@ -16,7 +16,8 @@ def help():
 	print('\tx/x <unit> <addr> <count> - disassemble from <count> words from <addr> as <unit>\n\t -(Big endian display. Why ? Because easier to read from left to right :))\n')
 	print('\tx/s <addr> <count> - interpret <addr> as 0 terminated string')
 	print('\txref <addr> - Try to find all xrefs to <addr>')
-	print('\tfind <str> - find all occurences of <str>')
+	print('\tfinds <str> - find all occurences of <str>')
+	print('\tfind <hexSequence> - find all occurences of the bytes <hexSequence> (eg: find 0a1032897f)')
 
 def int_(s):
 	try :
@@ -74,15 +75,18 @@ def prompt():
 					strings(addr, cnt)
 			else:
 				print('Syntax error')
-		elif action[0] == 'find':
+		elif action[0] == 'finds':
 			if len(action) == 2:
-				s = action[1]
-				if s == -1:
-					print("can't parse number")
-				else :
-					res = find(s)
-					for l in res:
-						print(hex(l) + ' = ' + str(l))
+				res = finds(action[1])
+				for l in res:
+					print(hex(l) + ' = ' + str(l))
+			else:
+				print('Syntax error')
+		elif action[0] == 'find':
+			if len(action) == 2 and (len(action[1])%2) == 0:
+				res = find(action[1])
+				for l in res:
+					print(hex(l) + ' = ' + str(l))
 			else:
 				print('Syntax error')
 		elif action[0] == 'xref':

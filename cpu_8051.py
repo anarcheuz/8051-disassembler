@@ -113,7 +113,7 @@ def strings(where=0, cnt=1):
 		cnt -= 1
 
 
-def find(s=''):
+def finds(s=''):
 	s = bytes(s, 'ascii')
 	occur = list()
 	pos = env['data'].find(s)
@@ -121,6 +121,16 @@ def find(s=''):
 		occur.append(pos)
 		pos = env['data'].find(s, pos+1)
 	return occur
+
+def find(seq):
+	seq = bytes([int(seq[i:i+2],16) for i in range(0, len(seq), 2)])
+	occur = list()
+	pos = env['data'].find(seq)
+	while pos != -1:
+		occur.append(pos)
+		pos = env['data'].find(seq, pos+1)
+	return occur
+
 
 """
 	may induce false positive because there is no alignment on instructions

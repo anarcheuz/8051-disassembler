@@ -22,7 +22,8 @@ $ ./disas.py dump.bin
 
 	x/s <addr> <count> - interpret <addr> as 0 terminated string
 	xref <addr> - Try to find all xrefs to <addr>
-	find <str> - find all occurences of <str>
+	finds <str> - find all occurences of <str>
+	find <hexSequence> - find all occurences of the bytes <hexSequence> (eg: find 0a1032897f)
 ```
 
 # Refs
