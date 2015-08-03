@@ -31,3 +31,4 @@ $ ./disas.py dump.bin
 * https://github.com/adamdunkels/contiki-fork/wiki/8051-Memory-Spaces
 * https://en.wikipedia.org/wiki/Intel_MCS-51
 * http://what-when-how.com/8051-microcontroller/8051-register-banks-and-stack/
+* http://www.8052.com/tutint.phtml
